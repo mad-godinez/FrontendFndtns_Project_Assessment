@@ -1,7 +1,8 @@
 /* -------  General Styles ------- */
-
 body {
+  margin: 0;
   font-family: "Lato", sans-serif;
+  flex-direction: column;
 }
 
 h2 {
@@ -10,7 +11,10 @@ h2 {
   margin: 0 10px 10px 10px;
   text-align: center;
 }
-
+#stay h2{
+  font-size: 24px;
+  margin: 0 1px 20px 0;
+}
 h3 {
   font-size: 18px;
   font-weight: 500;
@@ -30,53 +34,48 @@ section.alternate-background {
   color: #fff;
 }
 
-main img {
-  width: 100px;
-}
-
-/* ---  Groups & Items --- */
-
-.group {
+/* ---  Images: Groups & Items --- */
+#about, #ideas, #host{
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
-
-.item {
+#about img, #ideas img, #host img{
+  width: 100%;
   flex: 1;
-  margin: 10px;
+  margin-bottom: 15px;
 }
 
-.item-double {
-  flex: 2;
-}
 
 /* -------  Navigation ------- */
-
-header {
+header{ 
   background-color: #ff385c;
   padding: 20px 20px 0 20px;
   text-align: center;
 }
-
 .logo {
   font-family: "Pangolin", cursive;
   font-size: 72px;
   color: #fff;
 }
-
-header nav ul li {
-  list-style-type: none;
+header nav{
+  display: flex;
+  justify-content: center;
 }
-
+header nav ul{
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+}
 header nav ul li a {
   color: #fff;
   text-decoration: none;
   padding: 0 20px 0 0;
 }
-
 header nav ul li a:hover {
-  color: #bdbdbd;
-  text-decoration: none;
+  color: #00a699;
+  text-decoration: underline;
+  text-decoration-style: wavy;
 }
 
 /* -------  Search Form ------- */
@@ -84,17 +83,26 @@ form {
   border: 2px solid #ff385c;
   padding: 10px;
 }
-
-form label {
+form .formfields{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: auto;
+  margin: 10px;
+} 
+div{
+  display: flex;
+  width: 100%;
+}
+div label{
+  flex: 0.5;
   font-weight: bold;
 }
-
-form select,
-form input {
+div input, div select{
+  flex: 1;
+  justify-self: end;
   margin-bottom: 20px;
-  width: 180px;
 }
-
 form button {
   background-color: #ff385c;
   border: none;
@@ -117,3 +125,9 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+/* -------  DESKTOP ------- */
+@media all and (min-width: 480px){
+  body{
+    flex-direction: row;
+  }
+}

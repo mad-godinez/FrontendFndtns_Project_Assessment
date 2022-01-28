@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width initial-scale=1" />
     <title>Vacation Rentals & Unique Homes</title>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -22,10 +22,10 @@
       <div class="logo">Thinkfulbnb</div>
       <nav>
         <ul id="menu">
-          <li><a>Stay</a></li>
-          <li><a>About</a></li>
-          <li><a>Ideas</a></li>
-          <li><a>Host</a></li>
+          <li><a href="#stay">Stay</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#ideas">Ideas</a></li>
+          <li><a href="#host">Host</a></li>
         </ul>
       </nav>
     </header>
@@ -34,7 +34,52 @@
       <!-- Stay -->
       <section id="stay">
         <h2>Find the perfect vacation rental</h2>
-        <!-- Create a form here -->
+        <form>
+          <!-- Location Text Field -->
+          <div class="formfields">
+            <div class="destination">
+              <label for="location">Location</label>
+              <input 
+                id="location"
+                type="text"
+                name="location"
+                placeholder="Search destination"
+                required
+              /></div>
+            <!-- Arrive Calendar Date -->
+            <div class="arrive">
+              <label for="arrive">Arrive</label>
+              <input 
+                type="date" 
+                pattern="(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d"
+                required
+              />
+            </div>
+            <!-- Depart Calendar Date -->
+            <div class="depart">
+              <label for="depart">Depart</label>
+              <input 
+                type="date" 
+                pattern="(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d"
+                required
+              />
+            </div>
+            <!-- Housing Type Selection Menu -->
+            <div class="housetype">
+              <label for="housetype">Type</label>
+              <select name="housetype" size="1"required>
+                <option value="apartment">Apartment</option>
+                <option value="barn">Barn</option>
+                <option value="castle">Castle</option>
+                <option value="houseboat">Houseboat</option>
+                <option value="tinyhouse">Tiny House</option>
+                <option value="yacht">Yacht</option>
+                <option value="yurt">Yurt</option>
+              </select>
+            </div>
+          </div>   
+          <button type="submit">Search</button>         
+        </form>
       </section>
 
       <!-- About -->
