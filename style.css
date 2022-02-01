@@ -135,19 +135,22 @@ footer p {
   form {
     display: flex;
     flex-direction: row;
+    /* flex-wrap: wrap; */
   }
   .formfields{
     flex: 1;
     flex-direction: row;
     margin: 0;
+    flex-wrap: wrap;
   }
   .destination, .arrive, .depart, .housetype{
     flex: 1;
     flex-direction: column;
     margin: 0 10px 0 0;
+  }
+  .formfields div input, .formfields div select{
     min-width: 191px;
   }
-  
   .formfields label{
     padding-bottom: 2px;
   }
