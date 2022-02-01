@@ -1,10 +1,10 @@
-/* -------  General Styles ------- */
+/* -------  MOBILE -------
+   -------  General Styles ------- */
 body {
   margin: 0;
   font-family: "Lato", sans-serif;
   flex-direction: column;
 }
-
 h2 {
   font-size: 26px;
   font-weight: 400;
@@ -19,46 +19,43 @@ h3 {
   font-size: 18px;
   font-weight: 500;
 }
-
 p {
   line-height: 1.5em;
   margin: 0;
 }
-
 section {
   padding: 20px;
 }
-
 section.alternate-background {
   background-color: #00a699;
   color: #fff;
 }
 
 /* ---  Images: Groups & Items --- */
-#about, #ideas, #host{
+.aboutbody, .ideabody, #host{
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+.ideabody div, .hostbody{
+  display: flex;
+  flex-direction: column;
+}
 #about img, #ideas img, #host img{
   width: 100%;
+  margin-bottom: 5px;
   flex: 1;
-  margin-bottom: 15px;
 }
-
-
 /* -------  Navigation ------- */
 header{ 
   background-color: #ff385c;
-  padding: 20px 20px 0 20px;
-  text-align: center;
 }
 .logo {
   font-family: "Pangolin", cursive;
   font-size: 72px;
   color: #fff;
 }
-header nav{
+header div, header nav{
   display: flex;
   justify-content: center;
 }
@@ -83,25 +80,24 @@ form {
   border: 2px solid #ff385c;
   padding: 10px;
 }
-form .formfields{
+.formfields{
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   width: auto;
   margin: 10px;
 } 
-div{
+.formfields div{
   display: flex;
+  margin-bottom: 10px;
   width: 100%;
 }
-div label{
+.formfields div label{
   flex: 0.5;
   font-weight: bold;
 }
-div input, div select{
+.formfields div input, .formfields div select{
   flex: 1;
-  justify-self: end;
-  margin-bottom: 20px;
 }
 form button {
   background-color: #ff385c;
@@ -111,23 +107,86 @@ form button {
   padding: 15px;
   width: 100%;
 }
-
 /* -------  Footer ------- */
-
 footer {
   background-color: #ff385c;
 }
-
 footer p {
   color: #fff;
   text-align: center;
   padding: 20px;
 }
-
-/* -------  Media Query ------- */
-/* -------  DESKTOP ------- */
+/* -------  Media Query ------- 
+   -------  DESKTOP ------- */
 @media all and (min-width: 480px){
   body{
     flex-direction: row;
+  }
+  header{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: space-between;
+  }
+  header nav{
+    align-self: center;
+  }
+  form {
+    display: flex;
+    flex-direction: row;
+  }
+  .formfields{
+    flex: 1;
+    flex-direction: row;
+    margin: 0;
+  }
+  .destination, .arrive, .depart, .housetype{
+    flex: 1;
+    flex-direction: column;
+    margin: 0 10px 0 0;
+  }
+  .formfields label{
+    padding-bottom: 2px;
+  }
+  form button{
+    margin:0;
+    flex: 0.15;
+    width: auto;
+  }
+  #about img, #ideas img{
+    flex-direction: row;
+    margin: 0;
+  }
+  .aboutbody{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .bodyimg{
+    display: flex; 
+    flex: 1;
+    flex-direction: row;
+    margin-right: 10px;
+  }
+  .aboutbody p{
+    flex: 2;
+    align-self: center;
+  }
+  .ideabody div{
+    flex-direction: row;
+  }
+  .forest-beach div, .cabins-pet div{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 5px;
+  }
+  #host{
+    flex-direction: row;
+  }
+  .hostbody, .hostimg{
+    align-self: center;
+    flex: 1;
+    padding-right: 10px;
   }
 }
